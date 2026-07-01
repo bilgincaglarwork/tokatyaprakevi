@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import OrderSection from "@/components/OrderSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Testimonials />
       <OrderSection />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
