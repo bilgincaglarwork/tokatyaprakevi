@@ -18,7 +18,7 @@ export default function AdminLogin() {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {
-      setError("E-posta veya şifre hatalı.");
+      setError(error.message);
       setLoading(false);
       return;
     }
