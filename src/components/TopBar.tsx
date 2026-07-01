@@ -23,7 +23,7 @@ function FacebookIcon() {
 
 export default function TopBar() {
   return (
-    <div className="bg-green-dark text-white text-xs md:text-sm">
+    <div className="bg-brand-dark text-white text-xs md:text-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         <p className="flex flex-wrap gap-x-2 gap-y-0.5">
           <span>Tokat ve Cevre Illere Hizli Teslimat</span>

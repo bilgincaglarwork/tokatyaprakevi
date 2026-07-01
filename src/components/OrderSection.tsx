@@ -47,9 +47,9 @@ export default function OrderSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row">
           {/* Left — Steps */}
-          <div className="bg-green-dark text-white p-8 lg:p-12 lg:w-2/5 space-y-8">
+          <div className="bg-brand-dark text-white p-8 lg:p-12 lg:w-2/5 space-y-8">
             <div>
-              <p className="text-green-main font-semibold text-sm tracking-wide uppercase mb-2">
+              <p className="text-brand-green font-semibold text-sm tracking-wide uppercase mb-2">
                 Kapida Odeme ile
               </p>
               <h2 className="font-serif text-2xl md:text-3xl leading-snug">
@@ -59,8 +59,8 @@ export default function OrderSection() {
             <div className="space-y-6">
               {STEPS.map((s, i) => (
                 <div key={s.title} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-main/20 rounded-full flex items-center justify-center shrink-0">
-                    <s.icon size={20} className="text-green-main" />
+                  <div className="w-10 h-10 bg-brand-green/20 rounded-full flex items-center justify-center shrink-0">
+                    <s.icon size={20} className="text-brand-green" />
                   </div>
                   <div>
                     <p className="font-semibold text-sm">
@@ -75,36 +75,36 @@ export default function OrderSection() {
 
           {/* Right — Form */}
           <div className="bg-white p-8 lg:p-12 lg:w-3/5">
-            <h3 className="font-serif text-xl text-green-dark mb-6">Siparis Formu</h3>
+            <h3 className="font-serif text-xl text-brand-dark mb-6">Siparis Formu</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-text/70 mb-1">Ad Soyad</label>
+                  <label className="block text-xs font-medium text-brand-text/70 mb-1">Ad Soyad</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-main/40"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-text/70 mb-1">Telefon</label>
+                  <label className="block text-xs font-medium text-brand-text/70 mb-1">Telefon</label>
                   <input
                     type="tel"
                     required
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-main/40"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-medium text-text/70 mb-1">Urun Secimi</label>
+                <label className="block text-xs font-medium text-brand-text/70 mb-1">Urun Secimi</label>
                 <select
                   value={form.product}
                   onChange={(e) => setForm({ ...form, product: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-main/40 bg-white"
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40 bg-white"
                 >
                   {PRODUCTS_OPTIONS.map((p) => (
                     <option key={p} value={p}>{p}</option>
@@ -112,30 +112,30 @@ export default function OrderSection() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-text/70 mb-1">Adres</label>
+                <label className="block text-xs font-medium text-brand-text/70 mb-1">Adres</label>
                 <textarea
                   required
                   rows={2}
                   value={form.address}
                   onChange={(e) => setForm({ ...form, address: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-main/40 resize-none"
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40 resize-none"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-text/70 mb-1">Siparis Notu (Opsiyonel)</label>
+                <label className="block text-xs font-medium text-brand-text/70 mb-1">Siparis Notu (Opsiyonel)</label>
                 <textarea
                   rows={2}
                   value={form.note}
                   onChange={(e) => setForm({ ...form, note: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-main/40 resize-none"
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40 resize-none"
                 />
               </div>
-              <div className="bg-cream rounded-lg px-4 py-3 text-sm text-text/70">
-                Odeme Yontemi: <strong className="text-text">Kapida Odeme</strong>
+              <div className="bg-brand-cream rounded-lg px-4 py-3 text-sm text-brand-text/70">
+                Odeme Yontemi: <strong className="text-brand-text">Kapida Odeme</strong>
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-main hover:bg-green-light text-white font-semibold py-3 rounded-lg transition-colors text-sm"
+                className="w-full bg-brand-green hover:bg-brand-light text-white font-semibold py-3 rounded-lg transition-colors text-sm"
               >
                 Siparis Talebi Gonder
               </button>

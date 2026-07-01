@@ -31,10 +31,10 @@ export default function ProductGrid() {
   return (
     <section id="urunler" className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <p className="text-center text-green-main font-semibold text-sm tracking-wide uppercase mb-2">
+        <p className="text-center text-brand-green font-semibold text-sm tracking-wide uppercase mb-2">
           Urunlerimiz
         </p>
-        <h2 className="text-center font-serif text-3xl md:text-4xl text-green-dark mb-10">
+        <h2 className="text-center font-serif text-3xl md:text-4xl text-brand-dark mb-10">
           Ihtiyaciniza Uygun Secenekler
         </h2>
 
@@ -46,21 +46,21 @@ export default function ProductGrid() {
             >
               <div className="relative h-56">
                 <Image src={p.img} alt={p.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                <span className="absolute top-3 left-3 bg-green-main text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute top-3 left-3 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">
                   {p.kg} KG
                 </span>
               </div>
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-serif text-xl text-green-dark font-semibold">{p.name}</h3>
-                <p className="text-text/60 text-sm mt-1 flex-1">{p.desc}</p>
-                <p className="text-2xl font-bold text-green-main mt-3">
+                <h3 className="font-serif text-xl text-brand-dark font-semibold">{p.name}</h3>
+                <p className="text-brand-text/60 text-sm mt-1 flex-1">{p.desc}</p>
+                <p className="text-2xl font-bold text-brand-green mt-3">
                   &#8378;{p.price}
                 </p>
                 <a
                   href={`https://wa.me/${WA}?text=${encodeURIComponent(`Merhaba, ${p.name} siparis vermek istiyorum.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 block text-center bg-green-main hover:bg-green-light text-white font-semibold py-2.5 rounded-lg transition-colors"
+                  className="mt-4 block text-center bg-brand-green hover:bg-brand-light text-white font-semibold py-2.5 rounded-lg transition-colors"
                 >
                   Siparis Ver
                 </a>

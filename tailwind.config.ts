@@ -9,17 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "green-main": "#4A6B3A",
-        "green-dark": "#2E3A22",
-        "green-light": "#5a7d48",
-        cream: "#F6F2E9",
-        gold: "#C9A24B",
-        text: "#2A2A2A",
+        brand: {
+          green: "#4A6B3A",
+          dark: "#2E3A22",
+          light: "#5a7d48",
+          cream: "#F6F2E9",
+          gold: "#C9A24B",
+          text: "#2A2A2A",
+        },
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        script: ["Great Vibes", "cursive"],
-        sans: ["Inter", "sans-serif"],
+        serif: ["var(--font-playfair)", "serif"],
+        script: ["var(--font-great-vibes)", "cursive"],
+        sans: ["var(--font-inter)", "sans-serif"],
       },
     },
   },
