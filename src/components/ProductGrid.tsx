@@ -6,23 +6,23 @@ const WA = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "905452575228";
 const PRODUCTS = [
   {
     kg: 1,
-    name: "1 KG Tokat Yapragi",
+    name: "1 KG Tokat Yaprağı",
     price: "350",
-    desc: "Ev kullanimi icin ideal ozenle secilmis yapraklar.",
+    desc: "Ev kullanımı için ideal özenle seçilmiş yapraklar.",
     img: "/images/product-1kg.jpg",
   },
   {
     kg: 3,
-    name: "3 KG Tokat Yapragi",
+    name: "3 KG Tokat Yaprağı",
     price: "950",
-    desc: "Kalabalik aileler ve stok yapmak isteyenler icin.",
+    desc: "Kalabalık aileler ve stok yapmak isteyenler için.",
     img: "/images/product-3kg.jpg",
   },
   {
     kg: 5,
-    name: "5 KG Tokat Yapragi",
+    name: "5 KG Tokat Yaprağı",
     price: "1.500",
-    desc: "Toplu alim, restoran ve ev yapimi uretim icin ideal secim.",
+    desc: "Toplu alım, restoran ve ev yapımı üretim için ideal seçim.",
     img: "/images/product-5kg.jpg",
   },
 ];
@@ -32,10 +32,10 @@ export default function ProductGrid() {
     <section id="urunler" className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-center text-brand-green font-semibold text-sm tracking-wide uppercase mb-2">
-          Urunlerimiz
+          Ürünlerimiz
         </p>
         <h2 className="text-center font-serif text-3xl md:text-4xl text-brand-dark mb-10">
-          Ihtiyaciniza Uygun Secenekler
+          İhtiyacınıza Uygun Seçenekler
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -57,12 +57,12 @@ export default function ProductGrid() {
                   &#8378;{p.price}
                 </p>
                 <a
-                  href={`https://wa.me/${WA}?text=${encodeURIComponent(`Merhaba, ${p.name} siparis vermek istiyorum.`)}`}
+                  href={`https://wa.me/${WA}?text=${encodeURIComponent(`Merhaba, ${p.name} sipariş vermek istiyorum.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 block text-center bg-brand-green hover:bg-brand-light text-white font-semibold py-2.5 rounded-lg transition-colors"
                 >
-                  Siparis Ver
+                  Sipariş Ver
                 </a>
               </div>
             </div>

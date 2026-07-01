@@ -6,10 +6,10 @@ import Image from "next/image";
 const WA = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "905452575228";
 
 const OUTER = [
-  { icon: Leaf, line1: "%100", line2: "Dogal" },
+  { icon: Leaf, line1: "%100", line2: "Doğal" },
   { icon: ShieldCheck, line1: "Taze", line2: "Hijyenik" },
-  { icon: CreditCard, line1: "Kapida", line2: "Odeme" },
-  { icon: Truck, line1: "Hizli", line2: "Teslimat" },
+  { icon: CreditCard, line1: "Kapıda", line2: "Ödeme" },
+  { icon: Truck, line1: "Hızlı", line2: "Teslimat" },
 ];
 
 export default function Hero() {
@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
-          alt="Tokat Asma Yapragi"
+          alt="Tokat Asma Yaprağı"
           fill
           className="object-cover"
           priority
@@ -36,22 +36,22 @@ export default function Hero() {
         <div className="flex-1 space-y-7 text-white">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
             <Leaf size={14} className="text-brand-gold" />
-            <span className="text-sm font-medium tracking-wide">Tokat&apos;in Meshur Lezzeti</span>
+            <span className="text-sm font-medium tracking-wide">Tokat&apos;ın Meşhur Lezzeti</span>
           </div>
 
           <div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] drop-shadow-lg">
               Tokat Asma
               <br />
-              Yapragi
+              Yaprağı
             </h1>
             <p className="font-script text-4xl md:text-5xl text-brand-gold mt-3 drop-shadow-md">
-              Sofraniza Gelsin
+              Sofranıza Gelsin
             </p>
           </div>
 
           <p className="text-white/80 max-w-lg text-lg leading-relaxed">
-            Incecik, damarsiz ve aromasiyla fark yaratan Tokat asma yapraklarini ozenle seciyoruz, taze ve hijyenik sekilde kapiniza kadar getiriyoruz.
+            İncecik, damarsız ve aromasıyla fark yaratan Tokat asma yapraklarını özenle seçiyoruz, taze ve hijyenik şekilde kapınıza kadar getiriyoruz.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
@@ -59,7 +59,7 @@ export default function Hero() {
               href="#siparis"
               className="bg-brand-green hover:bg-brand-light text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg shadow-lg shadow-brand-green/30 hover:shadow-xl hover:shadow-brand-green/40 hover:-translate-y-0.5"
             >
-              Siparis Ver
+              Sipariş Ver
             </a>
             <a
               href={`https://wa.me/${WA}`}
@@ -93,9 +93,9 @@ export default function Hero() {
             >
               <div className="w-[140px] h-[140px] rounded-full border-[3px] border-brand-gold/40 flex items-center justify-center">
                 <div className="w-[120px] h-[120px] bg-brand-gold rounded-full flex flex-col items-center justify-center text-white text-center shadow-2xl shadow-brand-gold/40">
-                  <span className="text-[9px] font-semibold tracking-widest uppercase opacity-80">Ince Damarsiz</span>
+                  <span className="text-[9px] font-semibold tracking-widest uppercase opacity-80">İnce Damarsız</span>
                   <span className="text-3xl font-bold mt-0.5">%100</span>
-                  <span className="text-sm font-bold">DOGAL</span>
+                  <span className="text-sm font-bold">DOĞAL</span>
                   <span className="text-[9px] tracking-wider opacity-80">KATKISIZ</span>
                 </div>
               </div>
@@ -144,9 +144,9 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-3 lg:hidden">
             <div className="w-[100px] h-[100px] rounded-full border-2 border-brand-gold/40 flex items-center justify-center">
               <div className="w-[84px] h-[84px] bg-brand-gold rounded-full flex flex-col items-center justify-center text-white text-center shadow-xl">
-                <span className="text-[8px] font-semibold tracking-widest uppercase opacity-80">Ince Damarsiz</span>
+                <span className="text-[8px] font-semibold tracking-widest uppercase opacity-80">İnce Damarsız</span>
                 <span className="text-xl font-bold">%100</span>
-                <span className="text-xs font-bold">DOGAL</span>
+                <span className="text-xs font-bold">DOĞAL</span>
                 <span className="text-[7px] tracking-wider opacity-80">KATKISIZ</span>
               </div>
             </div>

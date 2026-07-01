@@ -6,13 +6,13 @@ const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@tokatyaprakevi.com"
 
 const QUICK_LINKS = [
   { label: "Ana Sayfa", href: "#" },
-  { label: "Urunlerimiz", href: "#urunler" },
-  { label: "Hakkimizda", href: "#hakkimizda" },
-  { label: "Siparis Ver", href: "#siparis" },
+  { label: "Ürünlerimiz", href: "#urunler" },
+  { label: "Hakkımızda", href: "#hakkimizda" },
+  { label: "Sipariş Ver", href: "#siparis" },
 ];
 
 const REGIONS = [
-  "Tokat", "Turhal", "Zile", "Erbaa", "Niksar", "Resadiye", "Amasya", "Sivas", "Corum", "Yozgat ve Cevresi",
+  "Tokat", "Turhal", "Zile", "Erbaa", "Niksar", "Reşadiye", "Amasya", "Sivas", "Çorum", "Yozgat ve Çevresi",
 ];
 
 export default function Footer() {
@@ -24,13 +24,13 @@ export default function Footer() {
           <div className="space-y-4">
             <Image src="/images/logo.png" alt="Tokat Yaprak Evi" width={160} height={160} className="h-28 w-auto brightness-110" />
             <p className="text-white/60 text-sm leading-relaxed">
-              Tokat&apos;in en kaliteli asma yapraklari, dogrudan sofralariniza.
+              Tokat&apos;ın en kaliteli asma yaprakları, doğrudan sofralarınıza.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Hizli Linkler</h4>
+            <h4 className="font-semibold mb-4 text-sm">Hızlı Linkler</h4>
             <ul className="space-y-2">
               {QUICK_LINKS.map((l) => (
                 <li key={l.label}>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Regions */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Teslimat Bolgeleri</h4>
+            <h4 className="font-semibold mb-4 text-sm">Teslimat Bölgeleri</h4>
             <ul className="space-y-1 text-white/60 text-sm">
               {REGIONS.map((r) => (
                 <li key={r}>{r}</li>
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Iletisim</h4>
+            <h4 className="font-semibold mb-4 text-sm">İletişim</h4>
             <ul className="space-y-3 text-white/60 text-sm">
               <li className="flex items-center gap-2">
                 <Phone size={14} className="text-brand-green shrink-0" />
@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={14} className="text-brand-green shrink-0" />
-                Ertugrulgazi, Gazi Blv. No:42, 60500 Erbaa/Tokat, Turkiye
+                Ertugrulgazi, Gazi Blv. No:42, 60500 Erbaa/Tokat, Türkiye
               </li>
               <li className="flex items-center gap-2">
                 <Clock size={14} className="text-brand-green shrink-0" />
@@ -80,7 +80,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white/40 text-xs">
-          &copy; 2024 Tokat Yaprak Evi. Tum haklari saklidir.
+          &copy; 2024 Tokat Yaprak Evi. Tüm hakları saklıdır.
         </div>
       </div>
     </footer>

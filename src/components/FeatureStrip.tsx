@@ -1,10 +1,10 @@
 import { Headphones, Package, Truck, ShieldCheck } from "lucide-react";
 
 const FEATURES = [
-  { icon: Headphones, label: "Ucretsiz Danismanlik" },
+  { icon: Headphones, label: "Ücretsiz Danışmanlık" },
   { icon: Package, label: "Hijyenik Paketleme" },
-  { icon: Truck, label: "Hizli Teslimat" },
-  { icon: ShieldCheck, label: "Guvenli Alisveris" },
+  { icon: Truck, label: "Hızlı Teslimat" },
+  { icon: ShieldCheck, label: "Güvenli Alışveriş" },
 ];
 
 export default function FeatureStrip() {

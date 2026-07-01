@@ -2,11 +2,11 @@
 import { MapPin, Feather, Leaf, CreditCard, Truck } from "lucide-react";
 
 const REASONS = [
-  { icon: MapPin, title: "Tokat Yoresinden", desc: "Dogrudan Tokat'in bereketli topraklarindan ozenle toplanir.", color: "from-green-600 to-green-800" },
-  { icon: Feather, title: "Incecik ve Damarsiz", desc: "Bir bir elle secilmis, sarma icin en ideal yapraklar.", color: "from-emerald-500 to-emerald-700" },
-  { icon: Leaf, title: "Katkisiz & Dogal", desc: "Hicbir kimyasal islem veya katki maddesi kullanilmaz.", color: "from-lime-600 to-green-700" },
-  { icon: CreditCard, title: "Kapida Odeme", desc: "Urun elinize ulastiginda guvenle odemenizi yapin.", color: "from-amber-500 to-amber-700" },
-  { icon: Truck, title: "Yerel Teslimat", desc: "Tokat ve cevre illere ayni gun hizli gonderim.", color: "from-teal-500 to-teal-700" },
+  { icon: MapPin, title: "Tokat Yöresinden", desc: "Doğrudan Tokat'ın bereketli topraklarından özenle toplanır.", color: "from-green-600 to-green-800" },
+  { icon: Feather, title: "İncecik ve Damarsız", desc: "Bir bir elle seçilmiş, sarma için en ideal yapraklar.", color: "from-emerald-500 to-emerald-700" },
+  { icon: Leaf, title: "Katkısız & Doğal", desc: "Hiçbir kimyasal işlem veya katkı maddesi kullanılmaz.", color: "from-lime-600 to-green-700" },
+  { icon: CreditCard, title: "Kapıda Ödeme", desc: "Ürün elinize ulaştığında güvenle ödemenizi yapın.", color: "from-amber-500 to-amber-700" },
+  { icon: Truck, title: "Yerel Teslimat", desc: "Tokat ve çevre illere aynı gün hızlı gönderi̇m.", color: "from-teal-500 to-teal-700" },
 ];
 
 export default function WhyUs() {
@@ -20,7 +20,7 @@ export default function WhyUs() {
           Neden Tokat Yaprak Evi?
         </h2>
         <p className="text-center text-brand-text/60 max-w-2xl mx-auto mb-14">
-          Kalite, guven ve lezzeti bir arada sunuyoruz. Iste bizi tercih etmeniz icin 5 neden.
+          Kalite, güven ve lezzeti bir arada sunuyoruz. İşte bizi tercih etmeniz için 5 neden.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">

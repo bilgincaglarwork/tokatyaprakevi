@@ -5,16 +5,16 @@ import { ClipboardList, PhoneCall, Package, Banknote } from "lucide-react";
 const WA = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "905452575228";
 
 const STEPS = [
-  { icon: ClipboardList, title: "Siparisinizi Olusturun", desc: "Formu doldurun veya WhatsApp'tan yazin." },
-  { icon: PhoneCall, title: "Arayip Teyit Edelim", desc: "Siparislerinizi onaylamak icin sizi arayalim." },
-  { icon: Package, title: "Hazirlayalim", desc: "Yapraklarinizi ozenle paketleyelim." },
-  { icon: Banknote, title: "Kapida Odeyin", desc: "Teslimat sirasinda odemeni yapin." },
+  { icon: ClipboardList, title: "Siparişinizi Oluşturun", desc: "Formu doldurun veya WhatsApp'tan yazın." },
+  { icon: PhoneCall, title: "Arayıp Teyit Edelim", desc: "Siparişlerinizi onaylamak için sizi arayalım." },
+  { icon: Package, title: "Hazırlayalım", desc: "Yapraklarınızı özenle paketleyelim." },
+  { icon: Banknote, title: "Kapıda Ödeyin", desc: "Teslimat sırasında ödemenizi yapın." },
 ];
 
 const PRODUCTS_OPTIONS = [
-  "1 KG Tokat Yapragi - 350 TL",
-  "3 KG Tokat Yapragi - 950 TL",
-  "5 KG Tokat Yapragi - 1.500 TL",
+  "1 KG Tokat Yaprağı - 350 TL",
+  "3 KG Tokat Yaprağı - 950 TL",
+  "5 KG Tokat Yaprağı - 1.500 TL",
 ];
 
 export default function OrderSection() {
@@ -29,13 +29,13 @@ export default function OrderSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = [
-      `Merhaba, siparis vermek istiyorum.`,
+      `Merhaba, sipariş vermek istiyorum.`,
       `Ad Soyad: ${form.name}`,
       `Telefon: ${form.phone}`,
-      `Urun: ${form.product}`,
+      `Ürün: ${form.product}`,
       `Adres: ${form.address}`,
       form.note ? `Not: ${form.note}` : "",
-      `Odeme: Kapida Odeme`,
+      `Ödeme: Kapıda Ödeme`,
     ]
       .filter(Boolean)
       .join("\n");
@@ -50,10 +50,10 @@ export default function OrderSection() {
           <div className="bg-brand-dark text-white p-8 lg:p-12 lg:w-2/5 space-y-8">
             <div>
               <p className="text-brand-green font-semibold text-sm tracking-wide uppercase mb-2">
-                Kapida Odeme ile
+                Kapıda Ödeme ile
               </p>
               <h2 className="font-serif text-2xl md:text-3xl leading-snug">
-                Siparisinizi Olusturun
+                Siparişinizi Oluşturun
               </h2>
             </div>
             <div className="space-y-6">
@@ -75,7 +75,7 @@ export default function OrderSection() {
 
           {/* Right — Form */}
           <div className="bg-white p-8 lg:p-12 lg:w-3/5">
-            <h3 className="font-serif text-xl text-brand-dark mb-6">Siparis Formu</h3>
+            <h3 className="font-serif text-xl text-brand-dark mb-6">Sipariş Formu</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -100,7 +100,7 @@ export default function OrderSection() {
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-medium text-brand-text/70 mb-1">Urun Secimi</label>
+                <label className="block text-xs font-medium text-brand-text/70 mb-1">Ürün Seçimi</label>
                 <select
                   value={form.product}
                   onChange={(e) => setForm({ ...form, product: e.target.value })}
@@ -122,7 +122,7 @@ export default function OrderSection() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-brand-text/70 mb-1">Siparis Notu (Opsiyonel)</label>
+                <label className="block text-xs font-medium text-brand-text/70 mb-1">Sipariş Notu (Opsiyonel)</label>
                 <textarea
                   rows={2}
                   value={form.note}
@@ -131,13 +131,13 @@ export default function OrderSection() {
                 />
               </div>
               <div className="bg-brand-cream rounded-lg px-4 py-3 text-sm text-brand-text/70">
-                Odeme Yontemi: <strong className="text-brand-text">Kapida Odeme</strong>
+                Ödeme Yöntemi: <strong className="text-brand-text">Kapıda Ödeme</strong>
               </div>
               <button
                 type="submit"
                 className="w-full bg-brand-green hover:bg-brand-light text-white font-semibold py-3 rounded-lg transition-colors text-sm"
               >
-                Siparis Talebi Gonder
+                Sipariş Talebi Gönder
               </button>
             </form>
           </div>

@@ -26,11 +26,11 @@ export default function TopBar() {
     <div className="bg-brand-dark text-white text-xs md:text-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         <p className="flex flex-wrap gap-x-2 gap-y-0.5">
-          <span>Tokat ve Cevre Illere Hizli Teslimat</span>
+          <span>Tokat ve Çevre İllere Hızlı Teslimat</span>
           <span className="hidden sm:inline">•</span>
-          <span>Kapida Odeme Kolayligi</span>
+          <span>Kapıda Ödeme Kolaylığı</span>
           <span className="hidden sm:inline">•</span>
-          <span>%100 Dogal, Katkisiz</span>
+          <span>%100 Doğal, Katkısız</span>
         </p>
         <div className="flex items-center gap-3">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

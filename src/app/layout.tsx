@@ -22,21 +22,21 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Tokat Yaprak Evi | Tokat Asma Yapragi - Sarmalik Yaprak",
+  title: "Tokat Yaprak Evi | Tokat Asma Yaprağı - Sarmalık Yaprak",
   description:
-    "Tokat'in en kaliteli asma yapraklari. Incecik, damarsiz, %100 dogal sarmalik Tokat yapragi. Kapida odeme, hizli teslimat. Siparis icin WhatsApp'tan yazin.",
+    "Tokat'ın en kaliteli asma yaprakları. İncecik, damarsız, %100 doğal sarmalık Tokat yaprağı. Kapıda ödeme, hızlı teslimat. Sipariş için WhatsApp'tan yazın.",
   keywords: [
-    "tokat yapragi",
-    "asma yapragi",
-    "sarmalik yaprak",
-    "tokat asma yapragi",
+    "tokat yaprağı",
+    "asma yaprağı",
+    "sarmalık yaprak",
+    "tokat asma yaprağı",
     "yaprak sarma",
     "tokat yaprak evi",
   ],
   openGraph: {
-    title: "Tokat Yaprak Evi | Tokat Asma Yapragi",
+    title: "Tokat Yaprak Evi | Tokat Asma Yaprağı",
     description:
-      "Tokat'in meshur asma yapraklari, dogrudan sofralariniza. %100 dogal, katkisiz.",
+      "Tokat'ın meşhur asma yaprakları, doğrudan sofralarınıza. %100 doğal, katkısız.",
     url: "https://tokatyaprakevi.com",
     siteName: "Tokat Yaprak Evi",
     locale: "tr_TR",

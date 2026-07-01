@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const STATS = [
-  { value: "10+", label: "Yillik Tecrube" },
-  { value: "5.000+", label: "Mutlu Musteri" },
+  { value: "10+", label: "Yıllık Tecrübe" },
+  { value: "5.000+", label: "Mutlu Müşteri" },
   { value: "100%", label: "Memnuniyet" },
   { value: "7/24", label: "Destek" },
 ];
@@ -15,7 +15,7 @@ export default function About() {
         <div className="flex-1 relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="/images/about.jpg"
-            alt="Tokat Asma Yapragi uretim"
+            alt="Tokat Asma Yaprağı üretim"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -24,12 +24,12 @@ export default function About() {
 
         {/* Text */}
         <div className="flex-1 space-y-6">
-          <p className="text-brand-green font-semibold text-sm tracking-wide uppercase">Hakkimizda</p>
+          <p className="text-brand-green font-semibold text-sm tracking-wide uppercase">Hakkımızda</p>
           <h2 className="font-serif text-3xl md:text-4xl text-brand-dark leading-snug">
-            Tokat&apos;in Bereketi Sofralariniza
+            Tokat&apos;ın Bereketi Sofralarınıza
           </h2>
           <p className="text-brand-text/70 leading-relaxed">
-            Yillardir Tokat yoresinin en kaliteli asma yapraklarini ozenle secip, hijyenik kosullarda paketleyerek sofralariniza ulastiriyoruz. Musterilerimizin memnuniyeti her zaman oncelikli hedefimizdir.
+            Yıllardır Tokat yöresinin en kaliteli asma yapraklarını özenle seçip, hijyenik koşullarda paketleyerek sofralarınıza ulaştırıyoruz. Müşterilerimizin memnuniyeti her zaman öncelikli hedefimizdir.
           </p>
 
           {/* Stats */}

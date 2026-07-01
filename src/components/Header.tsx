@@ -9,11 +9,11 @@ const WA = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "905452575228";
 
 const NAV = [
   { label: "Ana Sayfa", href: "#" },
-  { label: "Urunlerimiz", href: "#urunler" },
-  { label: "Hakkimizda", href: "#hakkimizda" },
+  { label: "Ürünlerimiz", href: "#urunler" },
+  { label: "Hakkımızda", href: "#hakkimizda" },
   { label: "Neden Biz?", href: "#neden-biz" },
-  { label: "Siparis Ver", href: "#siparis" },
-  { label: "Iletisim", href: "#iletisim" },
+  { label: "Sipariş Ver", href: "#siparis" },
+  { label: "İletişim", href: "#iletisim" },
 ];
 
 export default function Header() {
