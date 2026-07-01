@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ClipboardList, PhoneCall, Package, Banknote } from "lucide-react";
+import { supabase, Product } from "@/lib/supabase";
 
 const WA = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "905452575228";
 
@@ -11,23 +12,51 @@ const STEPS = [
   { icon: Banknote, title: "Kapıda Ödeyin", desc: "Teslimat sırasında ödemenizi yapın." },
 ];
 
-const PRODUCTS_OPTIONS = [
+const FALLBACK_OPTIONS = [
   "1 KG Tokat Yaprağı - 350 TL",
   "3 KG Tokat Yaprağı - 950 TL",
   "5 KG Tokat Yaprağı - 1.500 TL",
 ];
 
 export default function OrderSection() {
+  const [productOptions, setProductOptions] = useState<string[]>(FALLBACK_OPTIONS);
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    product: PRODUCTS_OPTIONS[0],
+    product: FALLBACK_OPTIONS[0],
     address: "",
     note: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    supabase
+      .from("products")
+      .select("*")
+      .eq("active", true)
+      .order("kg")
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          const opts = data.map((p: Product) => `${p.name} - ${p.price.toLocaleString("tr-TR")} TL`);
+          setProductOptions(opts);
+          setForm((f) => ({ ...f, product: opts[0] }));
+        }
+      });
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Save to database
+    await supabase.from("orders").insert({
+      customer_name: form.name,
+      phone: form.phone,
+      product_name: form.product,
+      address: form.address,
+      note: form.note || null,
+    });
+
+    // Also open WhatsApp
     const msg = [
       `Merhaba, sipariş vermek istiyorum.`,
       `Ad Soyad: ${form.name}`,
@@ -40,6 +69,10 @@ export default function OrderSection() {
       .filter(Boolean)
       .join("\n");
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+
+    setSubmitted(true);
+    setForm({ name: "", phone: "", product: productOptions[0], address: "", note: "" });
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -76,6 +109,13 @@ export default function OrderSection() {
           {/* Right — Form */}
           <div className="bg-white p-8 lg:p-12 lg:w-3/5">
             <h3 className="font-serif text-xl text-brand-dark mb-6">Sipariş Formu</h3>
+
+            {submitted && (
+              <div className="mb-4 bg-green-50 text-green-700 px-4 py-3 rounded-lg text-sm font-medium">
+                Siparişiniz alındı! WhatsApp üzerinden de teyit edilecektir.
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -106,7 +146,7 @@ export default function OrderSection() {
                   onChange={(e) => setForm({ ...form, product: e.target.value })}
                   className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40 bg-white"
                 >
-                  {PRODUCTS_OPTIONS.map((p) => (
+                  {productOptions.map((p) => (
                     <option key={p} value={p}>{p}</option>
                   ))}
                 </select>
