@@ -1,27 +1,15 @@
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+"use client";
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
-let _supabase: SupabaseClient | null = null;
+export const supabase = createClient(
+  url || "https://placeholder.supabase.co",
+  key || "placeholder"
+);
 
-export function getSupabase(): SupabaseClient {
-  if (!_supabase) {
-    if (!supabaseUrl || !supabaseAnonKey) {
-      // Return a dummy client that won't crash during build
-      return createClient("https://placeholder.supabase.co", "placeholder");
-    }
-    _supabase = createClient(supabaseUrl, supabaseAnonKey);
-  }
-  return _supabase;
-}
-
-// Lazy-initialized singleton for convenience
-export const supabase = new Proxy({} as SupabaseClient, {
-  get(_target, prop) {
-    return (getSupabase() as never)[prop];
-  },
-});
+export const isSupabaseConfigured = !!(url && key && !url.includes("placeholder"));
 
 export type Product = {
   id: number;
