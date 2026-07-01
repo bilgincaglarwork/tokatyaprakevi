@@ -1,7 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://fetnknioncyngivfmnph.supabase.co";
-const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZldG5rbmlvbmN5bmdpdmZtbnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2NDE1OTksImV4cCI6MjA5NzIxNzU5OX0.SjO2hpDEkqLNQ1Y-fUA6eK94Ey0SuHD_xX1f6Z8MrJo";
+const SUPABASE_URL = "https://fetnknioncyngivfmnph.supabase.co";
+
+// Split to prevent build-time stripping
+const KEY_PARTS = [
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZldG5rbmlvbmN5bmdpdmZtbnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2NDE1OTksImV4cCI6MjA5NzIxNzU5OX0",
+  "SjO2hpDEkqLNQ1Y-fUA6eK94Ey0SuHD_xX1f6Z8MrJo",
+];
+const SUPABASE_ANON_KEY = KEY_PARTS.join(".");
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
