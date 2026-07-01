@@ -34,3 +34,7 @@ button {
 .animate-fade-up {
   animation: fade-up 0.25s ease-out;
 }
+
+.animate-marquee-fast {
+  animation: marquee 20s linear infinite;
+}
