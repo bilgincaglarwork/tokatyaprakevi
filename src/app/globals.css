@@ -9,6 +9,12 @@ html {
 body {
   color: #2a2a2a;
   background: #f6f2e9;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button {
+  touch-action: manipulation;
 }
 
 @keyframes marquee {

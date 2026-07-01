@@ -55,7 +55,7 @@ const REVIEWS = [
 
 function ReviewCard({ r }: { r: (typeof REVIEWS)[number] }) {
   return (
-    <div className="w-[300px] shrink-0 bg-brand-cream rounded-2xl p-6 shadow-sm flex flex-col gap-3">
+    <div className="w-[260px] sm:w-[300px] shrink-0 bg-brand-cream rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col gap-3">
       <div className="flex gap-1">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} size={16} className="fill-brand-gold text-brand-gold" />

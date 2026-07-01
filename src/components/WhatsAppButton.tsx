@@ -16,10 +16,10 @@ export default function WhatsAppButton() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat box */}
       {open && (
-        <div className="w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-up">
+        <div className="w-[calc(100vw-2rem)] sm:w-[320px] max-w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-up">
           {/* Header */}
           <div className="bg-[#25D366] px-4 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -69,7 +69,7 @@ export default function WhatsAppButton() {
       {/* FAB button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-16 h-16 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/30 hover:shadow-2xl hover:shadow-[#25D366]/40 transition-all duration-300 hover:scale-105"
+        className="w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/30 hover:shadow-2xl hover:shadow-[#25D366]/40 transition-all duration-300 hover:scale-105"
       >
         {open ? (
           <X size={26} className="text-white" />

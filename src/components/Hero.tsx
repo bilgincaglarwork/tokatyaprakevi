@@ -16,7 +16,7 @@ export default function Hero() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] lg:min-h-[700px]">
+    <section className="relative overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -40,12 +40,12 @@ export default function Hero() {
           </div>
 
           <div>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] drop-shadow-lg">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] drop-shadow-lg">
               Tokat Asma
               <br />
               Yaprağı
             </h1>
-            <p className="font-script text-4xl md:text-5xl text-brand-gold mt-3 drop-shadow-md">
+            <p className="font-script text-3xl sm:text-4xl md:text-5xl text-brand-gold mt-3 drop-shadow-md">
               Sofranıza Gelsin
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="#siparis"
-              className="bg-brand-green hover:bg-brand-light text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg shadow-lg shadow-brand-green/30 hover:shadow-xl hover:shadow-brand-green/40 hover:-translate-y-0.5"
+              className="bg-brand-green hover:bg-brand-light text-white font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl transition-all duration-300 text-base sm:text-lg shadow-lg shadow-brand-green/30 hover:shadow-xl hover:shadow-brand-green/40 hover:-translate-y-0.5"
             >
               Sipariş Ver
             </a>
@@ -65,7 +65,7 @@ export default function Hero() {
               href={`https://wa.me/${WA}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-white/40 text-white hover:bg-white hover:text-brand-dark font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg backdrop-blur-sm hover:-translate-y-0.5"
+              className="border-2 border-white/40 text-white hover:bg-white hover:text-brand-dark font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl transition-all duration-300 text-base sm:text-lg backdrop-blur-sm hover:-translate-y-0.5"
             >
               WhatsApp&apos;tan Yaz
             </a>

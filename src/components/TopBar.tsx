@@ -23,14 +23,14 @@ function FacebookIcon() {
 
 export default function TopBar() {
   return (
-    <div className="bg-brand-dark text-white text-xs md:text-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-        <p className="flex flex-wrap gap-x-2 gap-y-0.5">
+    <div className="bg-brand-dark text-white text-[10px] sm:text-xs md:text-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2">
+        <p className="flex flex-wrap gap-x-2 gap-y-0.5 mr-2">
           <span>Tokat ve Çevre İllere Hızlı Teslimat</span>
           <span className="hidden sm:inline">•</span>
-          <span>Kapıda Ödeme Kolaylığı</span>
+          <span className="hidden xs:inline">Kapıda Ödeme Kolaylığı</span>
           <span className="hidden sm:inline">•</span>
-          <span>%100 Doğal, Katkısız</span>
+          <span className="hidden sm:inline">%100 Doğal, Katkısız</span>
         </p>
         <div className="flex items-center gap-3">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

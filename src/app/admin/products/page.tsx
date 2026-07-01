@@ -1,7 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { supabase, Product } from "@/lib/supabase";
-import { Plus, Pencil, Trash2, X } from "lucide-react";
+import { Plus, Pencil, Trash2, X, Upload, ImageIcon } from "lucide-react";
+import Image from "next/image";
+
+const SUPABASE_URL = "https://fetnknioncyngivfmnph.supabase.co";
 
 const EMPTY: Omit<Product, "id" | "created_at"> = {
   name: "",
@@ -16,6 +19,8 @@ export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [editing, setEditing] = useState<Partial<Product> | null>(null);
   const [loading, setLoading] = useState(true);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const fetchProducts = async () => {
     const { data } = await supabase.from("products").select("*").order("kg");
@@ -44,6 +49,35 @@ export default function ProductsPage() {
     if (!confirm("Bu ürünü silmek istediğinize emin misiniz?")) return;
     await supabase.from("products").delete().eq("id", id);
     fetchProducts();
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !editing) return;
+
+    setUploading(true);
+    try {
+      const ext = file.name.split(".").pop();
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
+
+      const { error } = await supabase.storage
+        .from("products")
+        .upload(fileName, file, { cacheControl: "3600", upsert: false });
+
+      if (error) {
+        alert("Yükleme hatası: " + error.message);
+        return;
+      }
+
+      const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/products/${fileName}`;
+      setEditing({ ...editing, image_url: publicUrl });
+    } catch (err) {
+      alert("Beklenmeyen bir hata oluştu.");
+      console.error(err);
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
   };
 
   if (loading) {
@@ -159,12 +193,60 @@ export default function ProductsPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Görsel URL</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Ürün Görseli</label>
+                {/* Image preview */}
+                {editing.image_url && (
+                  <div className="mb-3 relative w-full h-40 rounded-lg overflow-hidden border border-gray-200 bg-gray-50">
+                    <Image
+                      src={editing.image_url}
+                      alt="Ürün önizleme"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                )}
+                {!editing.image_url && (
+                  <div className="mb-3 flex items-center justify-center w-full h-40 rounded-lg border border-dashed border-gray-300 bg-gray-50">
+                    <div className="text-center text-gray-400">
+                      <ImageIcon size={32} className="mx-auto mb-1" />
+                      <p className="text-xs">Görsel yüklenmedi</p>
+                    </div>
+                  </div>
+                )}
+                {/* Upload button */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+                <button
+                  type="button"
+                  disabled={uploading}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full flex items-center justify-center gap-2 border border-gray-200 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-2"
+                >
+                  {uploading ? (
+                    <>
+                      <div className="animate-spin w-4 h-4 border-2 border-brand-green border-t-transparent rounded-full" />
+                      Yükleniyor...
+                    </>
+                  ) : (
+                    <>
+                      <Upload size={16} />
+                      Görsel Yükle
+                    </>
+                  )}
+                </button>
+                {/* Fallback URL input */}
                 <input
                   type="text"
                   value={editing.image_url ?? ""}
                   onChange={(e) => setEditing({ ...editing, image_url: e.target.value })}
                   className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/40"
+                  placeholder="veya görsel URL'si girin"
                 />
               </div>
               <div className="flex items-center gap-2">

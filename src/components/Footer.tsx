@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="space-y-4">
-            <Image src="/images/logo.png" alt="Tokat Yaprak Evi" width={160} height={160} className="h-28 w-auto brightness-110" />
+            <Image src="/images/logo.png" alt="Tokat Yaprak Evi" width={160} height={160} className="h-20 sm:h-28 w-auto brightness-110" />
             <p className="text-white/60 text-sm leading-relaxed">
               Tokat&apos;ın en kaliteli asma yaprakları, doğrudan sofralarınıza.
             </p>

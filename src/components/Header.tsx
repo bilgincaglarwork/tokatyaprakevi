@@ -24,7 +24,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <Link href="#" className="flex items-center shrink-0">
-          <Image src="/images/logo.png" alt="Tokat Yaprak Evi" width={160} height={160} className="h-28 w-auto" />
+          <Image src="/images/logo.png" alt="Tokat Yaprak Evi" width={160} height={160} className="h-14 sm:h-20 lg:h-28 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
