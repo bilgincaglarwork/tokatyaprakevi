@@ -80,7 +80,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white/40 text-xs">
-          &copy; 2024 Tokat Yaprak Evi. Tüm hakları saklıdır.
+          &copy; 2024 Tokat Yaprak Evi. Tüm hakları Uğur Yüzgeç&apos;e aittir.
         </div>
       </div>
     </footer>
