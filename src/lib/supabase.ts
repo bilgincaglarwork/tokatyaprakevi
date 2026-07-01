@@ -1,24 +1,9 @@
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
-let client: SupabaseClient | null = null;
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://fetnknioncyngivfmnph.supabase.co";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZldG5rbmlvbmN5bmdpdmZtbnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2NDE1OTksImV4cCI6MjA5NzIxNzU5OX0.SjO2hpDEkqLNQ1Y-fUA6eK94Ey0SuHD_xX1f6Z8MrJo";
 
-export function getSupabaseClient(): SupabaseClient {
-  if (client) return client;
-
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
-
-  client = createClient(
-    url || "https://placeholder.supabase.co",
-    key || "placeholder"
-  );
-  return client;
-}
-
-export const supabase = {
-  get auth() { return getSupabaseClient().auth; },
-  from(table: string) { return getSupabaseClient().from(table); },
-};
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export type Product = {
   id: number;
