@@ -79,8 +79,11 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white/40 text-xs">
-          &copy; 2024 Tokat Yaprak Evi. Tüm hakları Uğur Yüzgeç&apos;e aittir.
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/40 text-xs">
+          <span>&copy; 2024 Tokat Yaprak Evi. Tüm hakları Uğur Yüzgeç&apos;e aittir.</span>
+          <a href="https://clarityuk.app" target="_blank" rel="noopener" className="hover:text-white/60 transition-colors">
+            Tasarım &amp; Geliştirme: ClarityUK
+          </a>
         </div>
       </div>
     </footer>
